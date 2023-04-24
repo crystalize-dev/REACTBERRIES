@@ -1,0 +1,8 @@
+.material-symbols-rounded {
+    transition: all 0.2s ease 0s;
+    font-variation-settings:
+            'FILL' 1,
+            'wght' 600,
+            'GRAD' 0,
+            'opsz' 48
+}
