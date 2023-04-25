@@ -1,18 +1,19 @@
 import './App.css';
 import AppRouter from "./routing/appRouter";
-import {useState} from "react";
+import {LocationContext} from "./context/locationContext";
+import {useLocation} from "./hooks/useLocation";
 
 
 function App() {
-    const [lang, setLang] = useState('ru')
-    const [location, setLocation] = useState('Москва')
+    const [location, setLocation] = useLocation()
 
-
-  return (
-    <div className="container">
-        <AppRouter/>
-    </div>
-  );
+    return (
+        <LocationContext.Provider value={{location, setLocation}}>
+            <div className="container">
+                <AppRouter/>
+            </div>
+        </LocationContext.Provider>
+    );
 }
 
 export default App;

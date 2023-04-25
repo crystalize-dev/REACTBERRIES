@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'poppins', 'sans-serif';
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
 }
 
@@ -21,6 +21,11 @@ a, button {
   --font-color: black;
   --main-color: hsl(207, 88%, 54%);
   --main-color-darker: hsl(207, 88%, 40%);
+
+  --inactive-color: rgba(255,255,255, 0.5);
+  --active-color: rgba(255,255,255, 0.95);
+
+  --gradient: linear-gradient(244deg, #e70af2,#009bff,#4abde3);
 }
 
 .container {

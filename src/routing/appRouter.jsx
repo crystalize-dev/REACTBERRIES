@@ -1,21 +1,22 @@
 import React from 'react';
 import {
-    createBrowserRouter,
+    createBrowserRouter, createRoutesFromElements, Route,
     RouterProvider,
 } from "react-router-dom";
+
 import Wrapper from "../pages/Wrapper/Wrapper";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Wrapper />,
-    },
-]);
+const router = createBrowserRouter(createRoutesFromElements(
+    <Route>
+        <Route path="/" element={<Wrapper />} />
+        <Route/>
+    </Route>
+));
 
 const AppRouter = () => {
     return (
         <>
-            <RouterProvider router={router} />
+            <RouterProvider router={router}/>
         </>
     );
 };

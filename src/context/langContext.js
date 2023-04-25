@@ -1,4 +1,4 @@
 import {createContext} from "react";
 
 
-export const langContext = createContext(null)
+export const LangContext = createContext(null)

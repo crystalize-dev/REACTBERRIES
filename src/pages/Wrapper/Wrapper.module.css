@@ -1,0 +1,15 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+
+    background: var(--gradient);
+}
+
+.temp {
+    margin-top: 150px;
+    width: 100%;
+    height: calc(100% - 150px);
+
+    background: white;
+    border-radius: 30px 30px 0 0;
+}
