@@ -1,2 +1,3 @@
 # ToDo
-- Size adapt headers
+- Slider switch rounds problem (mb youtube)
+- Slider other

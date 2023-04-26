@@ -38,6 +38,8 @@ const Header2 = () => {
                         <Icon>shopping_cart</Icon>
                         <p>Корзина</p>
                     </div>
+                    <Icon>location_on</Icon>
+                    <Icon>search</Icon>
                 </div>
             </div>
         </header>

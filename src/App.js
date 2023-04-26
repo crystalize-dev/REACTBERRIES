@@ -9,9 +9,7 @@ function App() {
 
     return (
         <LocationContext.Provider value={{location, setLocation}}>
-            <div className="container">
-                <AppRouter/>
-            </div>
+            <AppRouter/>
         </LocationContext.Provider>
     );
 }

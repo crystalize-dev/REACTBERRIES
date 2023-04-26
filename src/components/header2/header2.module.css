@@ -1,23 +1,20 @@
 .header {
     --header-height: 80px;
 
-    position: absolute;
-    top: 60px;
-    left: 0;
-
     width: 100%;
     height: var(--header-height);
 }
 .container {
     margin: 0 auto;
 
-    padding: 0 30px 0 20px;
+    padding: 20px;
 
     display: flex;
     align-items: center;
     gap: 20px;
 
     height: 100%;
+    width: 100%;
     max-width: var(--container-width);
 }
 
@@ -27,7 +24,9 @@
     justify-content: center;
 
     height: 50px;
+    min-height: 50px;
     width: 50px;
+    min-width: 50px;
 
     border-radius: 10px;
 
@@ -57,6 +56,7 @@
 
     width: 50%;
     height: 60%;
+    min-height: 48px;
 
     border-radius: 30px;
 
@@ -107,7 +107,6 @@
 }
 .options {
     display: flex;
-    align-items: center;
     gap: 20px;
 
     margin-left: auto;
@@ -129,4 +128,61 @@
 }
 .optionItem:hover p {
     color: var(--active-color);
+}
+
+.options > span {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .header {
+        --header-height: 170px;
+    }
+
+    .container {
+        position: relative;
+        align-items: unset;
+    }
+
+    .inputWrapper {
+        position: absolute;
+        bottom: 20px;
+        left: 2%;
+
+        height: 35%;
+        width: 96%;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        --header-height: 60px;
+    }
+    .container {
+        padding: 10px;
+    }
+    .container h1 {
+        font-size: 30px;
+    }
+
+    .toggleSidebar {
+        display: none;
+    }
+
+    .inputWrapper {
+        display: none;
+    }
+
+    .options {
+        align-items: center;
+    }
+
+    .optionItem {
+        display: none;
+    }
+
+    .options > span {
+        display: unset;
+        color: var(--active-color);
+    }
 }

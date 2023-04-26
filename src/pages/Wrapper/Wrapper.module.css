@@ -1,15 +1,34 @@
 .wrapper {
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
     background: var(--gradient);
 }
 
-.temp {
-    margin-top: 150px;
-    width: 100%;
-    height: calc(100% - 150px);
+.container {
+    --border-radius: 30px;
 
-    background: white;
-    border-radius: 30px 30px 0 0;
+    display: flex;
+    flex-direction: column;
+
+
+    padding: 40px;
+
+    max-width: var(--container-width);
+    height: 100%;
+
+    background: var(--background-color);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.container > * {
+    border-radius: calc(var(--border-radius) / 2);
+}
+
+
+@media (max-width: 900px) {
+    .container {
+        border-radius: 0;
+    }
 }

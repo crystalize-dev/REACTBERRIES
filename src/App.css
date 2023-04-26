@@ -21,22 +21,10 @@ a, button {
   --font-color: black;
   --main-color: hsl(207, 88%, 54%);
   --main-color-darker: hsl(207, 88%, 40%);
+  --second-color: #e70af2;
 
   --inactive-color: rgba(255,255,255, 0.5);
   --active-color: rgba(255,255,255, 0.95);
 
   --gradient: linear-gradient(244deg, #e70af2,#009bff,#4abde3);
-}
-
-.container {
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  max-width: var(--container-width);
-  height: 100vh;
-
-  background-color: var(--background-color);
 }
