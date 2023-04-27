@@ -1,3 +1,5 @@
 # ToDo
-- Slider switch rounds problem (mb youtube)
-- Slider other
+- Sidebar
+- main Content
+- add. buttons (support, upScroll)
+- login window

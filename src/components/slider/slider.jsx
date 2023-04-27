@@ -1,50 +1,58 @@
 import React, {useState} from 'react';
-import cl from "./slider.module.css";
+import cl from "./slider.module.css"
+import classNames from "classnames";
+import {slidesScheme} from "../../hardcode/slides";
+import SlideElem from "./sliderElem/slideElem";
 import Icon from "../icon/icon";
-import classes from "classnames";
-
-
 
 const Slider = () => {
-    const [activeSlide, setActiveSlide] = useState(7)
-
-    const slides = [1,2,3,4,5,6,7]
-
-    const getClassForRound = (slide) => {
-        const indexOfCentral = slides.indexOf(activeSlide)
-
-        const central = slides[indexOfCentral]
-        const minusOne = slides[indexOfCentral - 1 < 0 ? 6 : (indexOfCentral - 1) % slides.length]
-        const minusTwo = slides[indexOfCentral - 2 < 0 ? 5 : (indexOfCentral - 2) % slides.length]
-        const plusOne = slides[(indexOfCentral + 1) % slides.length]
-        const plusTwo = slides[(indexOfCentral + 2) % slides.length]
+    // eslint-disable-next-line no-unused-vars
+    const [slides, setSlides] = useState(slidesScheme)
+    const [activeSlide, setActiveSlide] = useState(slides[0])
 
 
-        console.log(minusTwo, minusOne, central, plusOne, plusTwo)
+    const setNextSlide = () => {
+        let nextSlide = slides.indexOf(activeSlide) + 1
 
-        if (slide === central) return cl.smallRound
-        else if (slide === minusOne || slide === plusOne) return classes(cl.smallRound, cl.visible)
-        else if (slide === minusTwo || slide === plusTwo) return classes(cl.smallRound, cl.almostVisible)
-        else return classes(cl.smallRound, cl.invisible)
+        if (nextSlide <= slides.length - 1) {
+            setActiveSlide(slides[nextSlide])
+        } else {
+            setActiveSlide(slides[0])
+        }
+    }
+
+    const setPrevSlide = () => {
+        let prevSlide = slides.indexOf(activeSlide) - 1
+
+        if (prevSlide >= 0) {
+            setActiveSlide(slides[prevSlide])
+        } else {
+            setActiveSlide(slides[slides.length - 1])
+        }
     }
 
     return (
-        <div className={cl.slider}>
+        <div className={cl.wrapper}>
+            <Icon className={classNames(cl.arrowLeft, cl.arrow)} onClick={() => setPrevSlide()}>arrow_back</Icon>
+
             <div className={cl.window}>
-                <div className={classes(cl.arrow, cl.left)}><Icon>arrow_back</Icon></div>
-
-
-                <div className={classes(cl.arrow, cl.right)}><Icon>arrow_forward</Icon></div>
+                {slides.map(slideElem =>
+                    <SlideElem key={slideElem.id}
+                               style={slideElem.id === 0 ? {marginLeft: `${-activeSlide.id * 100}%`} : null}
+                               text={slideElem.text}
+                               img={slideElem.img}
+                               description={slideElem.description}/>)
+                }
             </div>
 
-            <div className={cl.switch}>
-                <div className={cl.wrapper}>
-                    {slides.map(slide => <div key={slide}
-                                              className={getClassForRound(slide)}
-                                              id={slide}
-                                              onClick={e => setActiveSlide(parseInt(e.target.id))}/>)}
-                </div>
+            <div className={cl.switchWrapper}>
+                {slides.map(slideElem =>
+                    <div key={slideElem.id}
+                         className={slideElem.id === activeSlide.id ? classNames(cl.switch, cl.switchActive) : cl.switch}
+                         onClick={() => setActiveSlide(slideElem)}/>)}
             </div>
+
+            <Icon className={classNames(cl.arrowRight, cl.arrow)} onClick={() => setNextSlide()}>arrow_forward</Icon>
         </div>
     );
 };

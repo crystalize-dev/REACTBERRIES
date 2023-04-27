@@ -18,7 +18,7 @@ const Header2 = () => {
                 <div className={cl.inputWrapper}>
                     <input value={query} onChange={e => setQuery(e.target.value)} placeholder={"Я ищу..."}/>
                     <Icon>search</Icon>
-                    {query !== "" && <Icon>close</Icon>}
+                    {query !== "" && <Icon onClick={() => setQuery('')}>close</Icon>}
                 </div>
 
                 <div className={cl.options}>

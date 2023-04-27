@@ -9,21 +9,29 @@
 .container {
     --border-radius: 30px;
 
+    margin: 0 auto;
+
     display: flex;
     flex-direction: column;
 
-
-    padding: 40px;
+    padding: 20px;
 
     max-width: var(--container-width);
-    height: 100%;
+    height: calc(100% - 140px);
 
     background: var(--background-color);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
-.container > * {
-    border-radius: calc(var(--border-radius) / 2);
+.content {
+    position: relative;
+
+    width: 100%;
+    max-width: var(--content-width);
+    height: 100%;
+
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 

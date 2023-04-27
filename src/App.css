@@ -15,7 +15,8 @@ a, button {
 }
 
 #root {
-  --container-width: 1480px;
+  --container-width: 1920px;
+  --content-width: 1480px;
 
   --background-color: #fefefe;
   --font-color: black;

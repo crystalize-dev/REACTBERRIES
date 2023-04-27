@@ -4,11 +4,11 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-import Wrapper from "../pages/Wrapper/Wrapper";
+import Guest from "../pages/Guest/Guest";
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route>
-        <Route path="/" element={<Wrapper />} />
+        <Route path="/" element={<Guest />} />
         <Route/>
     </Route>
 ));
