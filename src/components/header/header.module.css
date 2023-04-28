@@ -11,7 +11,7 @@
 
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 
     height: 100%;
     width: 100%;
@@ -100,6 +100,21 @@
 .location:hover ~ .modalChoose, .modalChoose:hover {
     filter: opacity(1);
     pointer-events: all;
+}
+
+.additional {
+    padding: 3px 10px;
+
+    border-radius: 30px;
+
+    color: white;
+    cursor: pointer;
+}
+.sell {
+    background: linear-gradient(245deg, hsl(207, 88%, 40%),hsl(207, 88%, 54%));
+}
+.work {
+    background: linear-gradient(245deg, #f19f27, #fd646c)
 }
 
 

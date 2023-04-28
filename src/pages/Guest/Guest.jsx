@@ -9,20 +9,15 @@ import {slidesScheme} from "../../hardcode/slides";
 import classes from "classnames";
 import Icon from "../../components/icon/icon";
 import Sidebar from "../../components/sidebar/sidebar";
+import ChatSupport from "../../components/chatSupport/chatSupport";
 
 
 const Guest = () => {
-    const [showButton, setShowButton] = useState(false)
     const [sideBarActive, setSideBarActive] = useState(false)
-
-    const setButton = (e) => {
-        let scroll = e.target.scrollTop;
-
-        scroll > 200 ? setShowButton(true) : setShowButton(false);
-    }
+    const [chatModal, setChatModal] = useState(false)
 
     return (
-        <div className={cl.wrapper} onScroll={(e) => setButton(e)}>
+        <div className={cl.wrapper}>
             <Header id={'start'}/>
             <Header2 setSidebar={setSideBarActive}/>
 
@@ -38,12 +33,22 @@ const Guest = () => {
                 </div>
             </div>
 
-            <a href={"#start"} className={showButton ? classes(cl.button, cl.scroll) : classes(cl.button, cl.scroll, cl.hide)}>
+            <a href={"#start"} className={classes(cl.button, cl.scroll)}>
                 <Icon>arrow_upward</Icon>
             </a>
-            <button className={classes(cl.button, cl.support)}>
+            <button className={classes(cl.button, cl.support)} onClick={() => setChatModal(true)}>
                 <Icon>chat</Icon>
             </button>
+
+            <ChatSupport modal={chatModal} setModal={setChatModal}/>
+
+            <div className={cl.footer}>
+                <Icon>home</Icon>
+                <Icon>manage_search</Icon>
+                <Icon>shopping_cart</Icon>
+                <Icon>favorite</Icon>
+                <Icon>person</Icon>
+            </div>
         </div>
     );
 };

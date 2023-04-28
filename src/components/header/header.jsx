@@ -24,6 +24,13 @@ const Header = ({id}) => {
                                                     {item}
                         {item === location && <Icon>done</Icon>}</div>)}
                 </div>
+
+                <div className={classes(cl.additional, cl.sell)}>
+                    Продавайте на ReactShop
+                </div>
+                <div className={classes(cl.additional, cl.work)}>
+                    Работа в ReactShop
+                </div>
             </div>
         </header>
     );

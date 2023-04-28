@@ -1,0 +1,191 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.4);
+    transition: all 0.2s ease 0s;
+    z-index: 9999999999999;
+}
+.hide {
+    filter: opacity(0);
+    pointer-events: none;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+
+    width: 550px;
+    height: 500px;
+
+    border-radius: 15px;
+
+    background-color: var(--background-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.header img {
+    height: 35px
+}
+.header p {
+    font-weight: 600;
+    font-size: 16px;
+}
+.header > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.done {
+    color: var(--main-color) !important;
+    cursor: unset !important;
+}
+.header span {
+    color: rgba(0,0,0,0.5);
+    font-variation-settings: 'wght' 500;
+    cursor: pointer;
+}
+
+.msgArea {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 20px;
+
+    overflow-y: scroll;
+}
+.msgArea::-webkit-scrollbar {
+    width: 10px;
+}
+.msgArea::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.54);
+    border-radius: 10px;
+    border: 2px solid var(--background-color)
+}
+.message {
+    padding: 15px;
+
+    max-width: 70%;
+
+    border: 1px solid rgba(0,0,0,0.2);
+
+    white-space: break-spaces;
+    word-break: break-word;
+}
+.her {
+    border-radius: 10px 10px 10px 0;
+}
+.me {
+    border-radius: 10px 10px 0 10px;
+    margin-left: auto;
+}
+
+.inputArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+
+    height: fit-content;
+    width: 100%;
+
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+
+}
+.inputWrapper span {
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+
+    cursor: pointer;
+
+    color: rgba(0,0,0,0.5);
+}
+.inputWrapper span:hover {
+    color: var(--main-color);
+}
+.inputWrapper textarea {
+    padding: 16px 40px;
+
+    width: 96%;
+    height: 100%;
+    min-height: 52px;
+
+    max-height: 90px;
+    border-radius: 8px;
+
+    color: var(--font-color);
+
+    border: none;
+    outline: none;
+
+    background: rgba(0,0,0,0.05);
+
+    resize: none;
+}
+.inputWrapper textarea::-webkit-scrollbar {
+    width: 0;
+}
+
+.inputArea button {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+
+    align-self: flex-end;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: all 0.2s ease 0s;
+}
+.inputArea button:disabled {
+    cursor: not-allowed;
+}
+.inputArea button:not(:disabled) {
+    background: var(--main-color);
+    color: var(--background-color);
+}
+
+
+@media (max-width: 900px) {
+    .window {
+        border-radius: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+}
