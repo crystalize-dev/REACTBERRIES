@@ -5,13 +5,13 @@ import Icon from "../icon/icon";
 import {locations} from "../../hardcode/locations";
 import classes from 'classnames'
 
-const Header = () => {
+const Header = ({id}) => {
     const {location, setLocation} = useContext(LocationContext)
     // eslint-disable-next-line no-unused-vars
     const [locationsArr, setLocationsArr] = useState(locations.slice(0))
 
     return (
-        <header className={cl.header}>
+        <header className={cl.header} id={id}>
             <div className={cl.container}>
                 <div className={cl.location}>
                     <Icon>home_pin</Icon>

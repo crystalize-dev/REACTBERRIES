@@ -1,22 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import cl from "./Guest.module.css"
 import Header from "../../components/header/header";
 import Header2 from "../../components/header2/Header2";
 import Slider from "../../components/slider/slider";
+import Card from "../../components/card/card";
+import {products} from "../../hardcode/products";
+import classes from "classnames";
+import Icon from "../../components/icon/icon";
 
 
 const Guest = () => {
+    const [showButton, setShowButton] = useState(false)
+
+    const setButton = (e) => {
+        let scroll = e.target.scrollTop;
+
+        scroll > 200 ? setShowButton(true) : setShowButton(false);
+    }
+
     return (
-        <div className={cl.wrapper}>
-            <Header/>
+        <div className={cl.wrapper} onScroll={(e) => setButton(e)}>
+            <Header id={'start'}/>
             <Header2/>
 
             <div className={cl.container}>
                 <div className={cl.content}>
-                    <Slider/>
+                    <Slider />
 
+                    <div className={cl.cardArea}>
+                        {products.map(card => <Card key={card.id} img={card.img}/>)}
+                    </div>
                 </div>
             </div>
+
+            <a href={"#start"} className={showButton ? classes(cl.button, cl.scroll) : classes(cl.button, cl.scroll, cl.hide)}>
+                <Icon>arrow_upward</Icon>
+            </a>
+            <button className={classes(cl.button, cl.support)}>
+                <Icon>chat</Icon>
+            </button>
         </div>
     );
 };

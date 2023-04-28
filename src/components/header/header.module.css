@@ -30,6 +30,8 @@
 
     color: var(--inactive-color);
     transition: all 0.2s ease 0s;
+
+    user-select: none;
 }
 .location p {
     font-weight: 600;
@@ -62,6 +64,8 @@
     z-index: 9999;
 
     background: var(--background-color);
+
+    user-select: none;
 }
 .modalChoose > :first-child {
     border-radius: 10px 10px 0 0;

@@ -1,0 +1,50 @@
+.card {
+    position: relative;
+    flex-grow: 1;
+
+    min-height: 280px;
+    min-width: 270px;
+
+    border-radius: 15px;
+    cursor: pointer;
+
+    transition: all 0.3s ease 0s;
+    overflow: hidden;
+}
+.dark {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    background-color: black;
+    filter: opacity(0);
+
+    transition: all 0.3s ease 0s;
+    z-index: 99999;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+    object-fit: fill;
+    transition: all 0.3s ease 0s;
+
+    pointer-events: none;
+}
+
+.card:hover .dark {
+    filter: opacity(0.3);
+}
+.card:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 750px) {
+    .card {
+        min-width: unset;
+        max-height: 250px;
+    }
+}

@@ -4,9 +4,12 @@
     height: 100%;
 
     background: var(--gradient);
+    overflow-y: scroll;
 }
 
 .container {
+    position: relative;
+
     --border-radius: 30px;
 
     margin: 0 auto;
@@ -17,7 +20,7 @@
     padding: 20px;
 
     max-width: var(--container-width);
-    height: calc(100% - 140px);
+    height: fit-content;
 
     background: var(--background-color);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -27,16 +30,66 @@
     position: relative;
 
     width: 100%;
-    max-width: var(--content-width);
-    height: 100%;
+    height: fit-content;
+    max-width: calc(var(--content-width) - 20px);
 
     margin-left: 50%;
     transform: translateX(-50%);
+}
+
+.cardArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 20px 0;
+
+    gap: 20px;
+
+    width: 100%;
+    height: fit-content;
+}
+
+.button {
+    position: fixed;
+    bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--background-color);
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background-color: var(--main-color);
+
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: var(--main-color-darker);
+}
+.support {
+    right: 40px;
+}
+.scroll {
+    left: 20px;
+    filter: opacity(1);
+    pointer-events: all;
+}
+.hide {
+    filter: opacity(0);
+    pointer-events: none;
 }
 
 
 @media (max-width: 900px) {
     .container {
         border-radius: 0;
+        height: calc(100% - 60px);
     }
 }

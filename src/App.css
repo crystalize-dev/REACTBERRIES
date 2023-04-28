@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
+  scroll-behavior: smooth;
 }
 
 span, a, button, img {
@@ -11,7 +12,10 @@ span, a, button, img {
 }
 
 a, button {
+  outline: none;
+  border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 #root {
@@ -22,10 +26,10 @@ a, button {
   --font-color: black;
   --main-color: hsl(207, 88%, 54%);
   --main-color-darker: hsl(207, 88%, 40%);
-  --second-color: #e70af2;
+  --second-color: #0124b6;
 
   --inactive-color: rgba(255,255,255, 0.5);
   --active-color: rgba(255,255,255, 0.95);
 
-  --gradient: linear-gradient(244deg, #e70af2,#009bff,#4abde3);
+  --gradient: linear-gradient(245deg, #0124b6,hsl(207, 88%, 54%));
 }

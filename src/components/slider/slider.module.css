@@ -29,6 +29,8 @@
     transition: all 0.3s ease 0s;
     cursor: pointer;
     z-index: 13;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .arrowLeft {
     left: 1%;
@@ -48,6 +50,7 @@
     transform: translateX(-50%);
 
     display: flex;
+    align-items: center;
     gap: 5px;
 
     width: fit-content;
@@ -64,17 +67,21 @@
     filter: opacity(1);
 }
 .switch {
-    width: 13px;
-    height: 13px;
+    --size: 10px;
+
+    width: var(--size);
+    height: var(--size);
 
     background: var(--background-color);
-    border: 2px solid var(--background-color);
+    border-radius: 50%;
 
     cursor: pointer;
     transition: background 0.1s ease 0s;
+
+    box-shadow: 0 0 5px black;
 }
 .switchActive {
-    background: black;
+    background: var(--main-color);
 }
 .switchWrapper:hover .switchActive {
     background-color: var(--main-color);
@@ -97,7 +104,7 @@
 
 @media (max-width: 900px) {
     .wrapper {
-        height: 200px;
+        height: 160px;
     }
 
     .arrow { display: none }
