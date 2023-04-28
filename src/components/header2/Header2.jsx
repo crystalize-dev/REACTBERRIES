@@ -3,13 +3,13 @@ import cl from "./header2.module.css";
 import Icon from "../icon/icon";
 
 
-const Header2 = () => {
+const Header2 = ({setSidebar}) => {
     const [query, setQuery] = useState('')
 
     return (
         <header className={cl.header}>
             <div className={cl.container}>
-                <div className={cl.toggleSidebar}>
+                <div className={cl.toggleSidebar} onClick={() => (setSidebar(true))}>
                     <Icon>menu</Icon>
                 </div>
 

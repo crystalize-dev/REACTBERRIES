@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import cl from "./slider.module.css"
 import classNames from "classnames";
-import {slidesScheme} from "../../hardcode/slides";
 import SlideElem from "./sliderElem/slideElem";
 import Icon from "../icon/icon";
 
-const Slider = () => {
+
+const Slider = ({slidesScheme}) => {
     // eslint-disable-next-line no-unused-vars
     const [slides, setSlides] = useState(slidesScheme)
     const [activeSlide, setActiveSlide] = useState(slides[0])

@@ -5,12 +5,15 @@ import Header2 from "../../components/header2/Header2";
 import Slider from "../../components/slider/slider";
 import Card from "../../components/card/card";
 import {products} from "../../hardcode/products";
+import {slidesScheme} from "../../hardcode/slides";
 import classes from "classnames";
 import Icon from "../../components/icon/icon";
+import Sidebar from "../../components/sidebar/sidebar";
 
 
 const Guest = () => {
     const [showButton, setShowButton] = useState(false)
+    const [sideBarActive, setSideBarActive] = useState(false)
 
     const setButton = (e) => {
         let scroll = e.target.scrollTop;
@@ -21,11 +24,13 @@ const Guest = () => {
     return (
         <div className={cl.wrapper} onScroll={(e) => setButton(e)}>
             <Header id={'start'}/>
-            <Header2/>
+            <Header2 setSidebar={setSideBarActive}/>
+
+            {sideBarActive && <Sidebar setSidebar={setSideBarActive}/>}
 
             <div className={cl.container}>
                 <div className={cl.content}>
-                    <Slider />
+                    <Slider slidesScheme={slidesScheme}/>
 
                     <div className={cl.cardArea}>
                         {products.map(card => <Card key={card.id} img={card.img}/>)}
